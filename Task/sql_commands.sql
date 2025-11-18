@@ -88,3 +88,16 @@ WHERE full_name = 'Benjamin Šeško';
 
 -- Deleted table 'gameweeks'
 DROP TABLE gameweeks;
+
+--Li,pengcheng's part:
+-- Create table users
+CREATE TABLE users (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    password_hash VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Insert admin account
+INSERT INTO users (email, password_hash)
+VALUES ('lipengcheng@example.com', '$2y$10$pnF4gtv/tGybOItr4TCEZ.b9RRd93QdHzl0SXgc0nhVyz2bGRQym2');
