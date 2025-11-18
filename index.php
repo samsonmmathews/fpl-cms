@@ -1,3 +1,13 @@
+<!-- Li,pengcheng: Login -->
+<?php
+session_start();
+// Redirect to login if not authenticated
+if (!isset($_SESSION['user_id'])) {
+    header('Location: login.php');
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,6 +20,10 @@
 </head>
 
 <body class="container mt-4">
+    <!-- Li,pengcheng: Logout button: Allows the user to end the session and return to the login screen -->
+    <div class="text-end mb-3">
+        <a class="btn btn-outline-danger btn-sm" href="logout.php">Logout</a>
+    </div>
 
     <h1 class="text-center mb-4">Fantasy Premier League Database</h1>
 
@@ -19,7 +33,7 @@
     $query = "SELECT p.full_name, p.position, p.price, p.points, p.total_points, t.team_name, t.manager_name, t.stadium 
             FROM players p 
             INNER JOIN teams t ON p.fk_team = t.team_id
-            ORDER BY p.total_points DESC";  
+            ORDER BY p.total_points DESC";
 
     $result = mysqli_query($connect, $query);
 
@@ -68,7 +82,7 @@
     ?>
 
     <footer class="text-center">
-        <p>&copy; Group 3 | HTTP-5225</p>
+        <p>© 2025 Fantasy Premier League Database | Matchweek 7 stats</p>
     </footer>
 
     <style>

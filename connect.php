@@ -2,7 +2,7 @@
     $connect = mysqli_connect(
         'localhost',
         'root', 
-        'root', // password
+        '', // password
         'fpl_database' // database name
     );
 
