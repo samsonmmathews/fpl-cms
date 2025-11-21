@@ -20,10 +20,8 @@ if (!isset($_SESSION['user_id'])) {
 </head>
 
 <body class="container mt-4">
-    <!-- Li,pengcheng: Logout button: Allows the user to end the session and return to the login screen -->
-    <div class="text-end mb-3">
-        <a class="btn btn-outline-danger btn-sm" href="logout.php">Logout</a>
-    </div>
+
+    <?php include('nav.php'); ?>
 
     <h1 class="text-center mb-4">Fantasy Premier League Database</h1>
 
