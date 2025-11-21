@@ -16,7 +16,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="container py-5">
-    <h2>Add User</h2>
+    <h2>Add Player</h2>
     <?php include('nav.php'); ?>
     <form method="POST" enctype="multipart/form-data">
         <label for="fullName">Full Name:</label>
