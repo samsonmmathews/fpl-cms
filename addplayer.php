@@ -63,30 +63,32 @@
     </form>
 
     <?php
-        require('connect.php');
+        // require('connect.php');
 
-        if (isset($_POST['addUser'])) {
-            $name = $_POST['name'];
-            $email = $_POST['email'];
-            $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-            $imagePath = null;
+        if (isset($_POST['addPlayer'])) {
+            $fullName = $_POST['fullName'];
+            $position = $_POST['position'];
+            $price = $_POST['price'];
+            $points = $_POST['points'];
+            $totalPoints = $_POST['totalPoints'];
+            $fk_team = $_POST['fk_team'];
 
-            if (!empty($_FILES['image']['name'])) {
-                $targetDir = "uploads/";
-                if (!is_dir($targetDir)) 
-                    mkdir($targetDir);
-                $fileName = time() . "_" . basename($_FILES["image"]["name"]);
-                $targetFilePath = $targetDir . $fileName;
-                move_uploaded_file($_FILES["image"]["tmp_name"], $targetFilePath);
-                $imagePath = $targetFilePath;
-            }
+            // TODO
+            // if (!empty($_FILES['image']['name'])) {
+            //     $targetDir = "uploads/";
+            //     if (!is_dir($targetDir)) 
+            //         mkdir($targetDir);
+            //     $fileName = time() . "_" . basename($_FILES["image"]["name"]);
+            //     $targetFilePath = $targetDir . $fileName;
+            //     move_uploaded_file($_FILES["image"]["tmp_name"], $targetFilePath);
+            //     $imagePath = $targetFilePath;
+            // }
 
-            $query = "INSERT INTO users (name, email, password, image) VALUES ('$name', '$email', '$password', '$imagePath')";
+            $query = "INSERT INTO players (full_name, position, price, points, total_points, fk_team) VALUES ('$fullName', '$position', '$price', '$points', '$totalPoints', '$fk_team')";
             $result = mysqli_query($connect, $query);
-            if ($query)
+            if ($result)
             {
-                header("Location: users.php");
-                echo "User added successfully.";
+                header("Location: index.php");
                 exit();
             }
             else
