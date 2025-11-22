@@ -37,10 +37,10 @@
         <label for="price">Price (£m):</label>
         <input class="form-control mb-2" type="number" name="price" step="0.1" placeholder="eg. 7.5" required>
 
-        <label for="position">Position:</label>
+        <label for="points">Points for the current gameweek:</label>
         <input class="form-control mb-2" type="number" name="points" placeholder="Enter the points for the current game week" required>
 
-        <label for="totalPoints">Position:</label>
+        <label for="totalPoints">Total Points:</label>
         <input class="form-control mb-2" type="number" name="totalPoints" placeholder="Enter the cumulative points" required>
 
         <label for="fk_team">Team:</label>
