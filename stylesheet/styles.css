@@ -1,23 +1,17 @@
-/* body{
-    background-color: rgb(235, 235, 235);
-}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-h1{
-    margin-top:  30px;
-}
-
-table
+body
 {
-    background-color: grey;
+    background-color: black;
+    font-family: "montserrat";
 }
 
-footer
+#headerImg
 {
-    margin-top: 50px;
-    padding: 20px;
-    background-color: grey;
-    color: white;
-} */
+    /* max-width: 100%; */
+    width: 100%;
+    box-shadow: 0 5px 10px rgba(1, 1, 1, .25);
+}
 
 .cardContainer
 {
@@ -25,19 +19,24 @@ footer
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
+
+    background-color: white;
+    /* border: 2px solid purple; */
 }
 
 .outerCard
 {
     border: black 2px solid;
     width: 300px;
-    height: 400px;
+    height: 450px;
     margin: 15px;
-    background-color: rgb(254, 215, 144);
+    background-color: rgb(93, 39, 124);
     border-radius: 10px;
     padding: 5px;
 
     box-shadow: 4px 4px 15px rgba(0,0,0,0.2);
+
+    transition: background-color .5s ease;
 }
 
 .card
@@ -47,6 +46,13 @@ footer
     padding: 5px;
     border: black solid 1px;
     background-color: rgb(255, 255, 255);
+
+    display: flex;
+}
+
+.outerCard:hover
+{
+    background-color: #cdc1a7;
 }
 
 .card p
@@ -58,6 +64,7 @@ footer
 {
     display: flex;
     justify-content: end;
+
 }
 
 .position h2
@@ -73,6 +80,7 @@ footer
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    
 
     border-bottom: 2px solid black;
 }
@@ -82,14 +90,29 @@ footer
     color: black;
     text-align: center;
     font-size: 2em;
+    font-weight: bold;
 }
 
-.statContainer
+.pricePointCont
+{
+    height: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+
+}
+
+.pointContainer
 {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: space-evenly;
     height: 100%;
+    margin-top: 0;
+
+    width: 100%;
+
 }
 
 .statPrice h3
@@ -102,7 +125,7 @@ footer
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    height: 100%;
 
 }
 
@@ -110,11 +133,13 @@ footer
 {
     /* height: 100%; */
     display: flex;
-    align-items: end;
+    align-items: center;
     justify-content: center;
+    flex-direction: column;
 
     border-top: 1px black solid;
     border-bottom: 1px black solid;
+
 }
 
 .teamName p
@@ -125,4 +150,124 @@ footer
 .teamName h3
 {
     font-size: 1.5em;
+    text-align: center;
 }
+
+.teamInfo:hover .clubInfo
+{
+    max-height: 100px;
+    opacity: 1;
+
+}
+
+.rowDiv
+{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.clubInfo
+{
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+
+    gap: 10px;
+
+    transition: max-height 0.6s ease, opacity 0.4s ease
+}
+
+.clubInfoCol
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+
+    text-align: center;
+}
+
+.hiddenText
+{
+    font-size: 1em;
+}
+
+.footerBtnCont
+{
+    background-color: rgb(20, 2, 20);
+    border-top: rgb(255, 255, 255) 2px solid;
+    border-bottom: rgb(255, 255, 255) 2px solid;
+
+    max-height: 200px;
+    padding-left: 80px;
+    margin-top: 35px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.footerButtons
+{
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+
+
+}
+
+.footerButtons li, a
+{
+    list-style: none;
+    color: white;
+    font-size: 1.25em;
+    text-decoration: none;
+
+    margin-right: 20px;
+    transition: ease .25s ;
+}
+
+.footerBtnCont a:hover
+{
+    color: #cdc1a7;
+}
+
+
+#imgBg
+{
+    background-color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px;
+
+    width: 400px;
+
+}
+
+#premierLogo
+{
+    max-height: 199px;
+}
+
+footer
+{
+    margin-top: 10px;
+    background-color: black;
+    /* border-top: white 2px solid; */
+    border-bottom: white 2px solid;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+}
+

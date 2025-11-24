@@ -23,9 +23,34 @@ if (!isset($_SESSION['user_id'])) {
 
 <body class="container mt-4">
 
+    
+
     <?php include('nav.php'); ?>
 
-    <h1 class="text-center mb-4">Fantasy Premier League Database</h1>
+    <div>
+        <nav class="p-2 bg-transparent border-bottom border-light">
+            <div class="d-flex justify-content-between flex-wrap">
+                <!-- Buttons in the navbar -->
+                <button type="button" class="btn btn-outline-light flex-fill me-2 mb-2">Matches</button>
+                <button type="button" class="btn btn-outline-light flex-fill me-2 mb-2">Table</button>
+                <button type="button" class="btn btn-outline-light flex-fill me-2 mb-2">Statistic</button>
+                <button type="button" class="btn btn-outline-light flex-fill me-2 mb-2">Fantasy</button>
+                <button type="button" class="btn btn-outline-light flex-fill me-2 mb-2">News</button>
+                <button type="button" class="btn btn-outline-light flex-fill me-2 mb-2">Injuries</button>
+                <button type="button" class="btn btn-outline-light flex-fill me-2 mb-2">Players</button>
+                <button type="button" class="btn btn-outline-light flex-fill me-2 mb-2">Clubs</button>
+                <button type="button" class="btn btn-outline-light flex-fill me-2 mb-2">Video</button>
+                <button type="button" class="btn btn-outline-light flex-fill me-2 mb-2">More</button>
+
+
+
+
+            </div>
+        </nav>
+    </div>;
+
+
+    <!-- <h1 class="text-center mb-4">Fantasy Premier League Database</h1> -->
 
     <?php
     include 'connect.php';
@@ -42,22 +67,22 @@ if (!isset($_SESSION['user_id'])) {
     }
 
     if (mysqli_num_rows($result) > 0) {
-        echo '<div class="table-responsive">';
-        echo "<table class='table table-striped table-bordered table-sm align-middle text-center'>";
-        echo '<thead class="table-dark">
-                <tr>
-                    <th>Full Name</th>
-                    <th>Position</th>
-                    <th>Price</th>
-                    <th>Points</th>
-                    <th>Total Points</th>
-                    <th>Team Name</th>
-                    <th>Manager Name</th>
-                    <th>Home Stadium</th>
-                </tr>
-            </thead>';
+        // echo '<div class="table-responsive">';
+        // echo "<table class='table table-striped table-bordered table-sm align-middle text-center'>";
+        // echo '<thead class="table-dark">
+        //         <tr>
+        //             <th>Full Name</th>
+        //             <th>Position</th>
+        //             <th>Price</th>
+        //             <th>Points</th>
+        //             <th>Total Points</th>
+        //             <th>Team Name</th>
+        //             <th>Manager Name</th>
+        //             <th>Home Stadium</th>
+        //         </tr>
+        //     </thead>';
 
-        echo '<tbody>';
+        // echo '<tbody>';
 
         // while ($row = mysqli_fetch_assoc($result)) {
         //     echo "<tr>";
@@ -82,6 +107,9 @@ if (!isset($_SESSION['user_id'])) {
 
   echo '<div class="cardContainer">';
 
+  echo '<img id="headerImg" src="img/websiteHeader.png"/></img>';
+
+
 if (mysqli_num_rows($result) > 0)
 {
     while($row = mysqli_fetch_assoc($result))
@@ -96,24 +124,36 @@ if (mysqli_num_rows($result) > 0)
                 <div class=playerName>
                     <h3>' . $row['full_name'] . '</h3>
                 </div>
-                <div class=statContainer>
+                <div class="pricePointCont">
                     <div class=infoCol>
-                        <p><u> Price </u></p>
+                        <p><u><b> Price </b></u></p>
                         <h3>£' . number_format($row['price'], 1) . 'm</h3>
                     </div>
-                    <div class="infoCol">
-                        <p><u> Total Points </u></p>
-                        <h3>' . $row['total_points'] . '</h3>
-                    </div>
-                    <div class="infoCol">
-                        <p><u> Points </u></p>
-                        <h3>' . $row['points'] . '</h3>
+                    <div class=pointContainer>
+                        <div class="infoCol">
+                            <p><u> Total Points </u></p>
+                            <h3>' . $row['total_points'] . '</h3>
+                        </div>
+                        <div class="infoCol">
+                            <p><u> Points </u></p>
+                            <h3>' . $row['points'] . '</h3>
+                        </div>
                     </div>
                 </div>
                 <div class="teamInfo">
                     <div class="teamName">
-                        <p><u> Team </u></p>
+                        <p><u><b> Team </b></u></p>
                     <h3>' . $row['team_name'] . '</h3>
+                    </div>
+                    <div class="clubInfo">
+                        <div class="clubInfoCol">
+                            <p><u><b> Manager Name </b></u></p>
+                            <h4 class="hiddenText">' . $row['manager_name'] . ' </h4>
+                        </div>
+                        <div class="clubInfoCol">
+                            <p><u><b> Stadium </b></u></p>
+                            <h4 class="hiddenText">' . $row['stadium'] . ' </h4>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -129,6 +169,34 @@ echo "</div>";
 
     mysqli_close($connect);
     ?>
+
+    <div class="footerBtnCont">
+        <div>
+            <ul class="footerButtons">
+                <li><a href="index.php">Home</a></li>
+                <li><a href="#">Matches</a></li>
+                <li><a href="#">Table</a></li>
+                <li><a href="#">Statistic</a></li>
+                <li><a href="#">Fantasy</a></li>
+            </ul>
+        </div>
+
+        <div id="imgBg">
+            <a href="index.php"><img id="premierLogo" src="img/Premier_League_Logo.png"></a>
+        </div>
+
+        <div>
+            <ul class="footerButtons">
+                <li><a href="#">News</a></li>
+                <li><a href="#">Injuries</a></li>
+                <li><a href="#">Players</a></li>
+                <li><a href="#">Clubs</a></li>
+                <li><a href="#">Videos</a></li>
+
+
+            </ul>
+        </div>
+    </div>
 
     <footer class="text-center">
         <p>&copy; Group 3 | HTTP-5225</p>
