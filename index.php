@@ -49,7 +49,7 @@ if (session_status() == PHP_SESSION_NONE) {
 
             </div>
         </nav>
-    </div>;
+    </div>
 
 
     <!-- <h1 class="text-center mb-4">Fantasy Premier League Database</h1> -->

@@ -1,16 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+:root {
+    --mu-maroon:      #7B0101;
+    --mu-red:         #B80102;
+    --mu-rosso:       #DA0106;
+    --mu-yellow:      #FFE600;
+    --mu-tangerine:   #EF9101;
+    --mu-persimmon:   #E14F01;
+}
+
 body
 {
-    background-color: black;
-    font-family: "montserrat";
+    background-color: var(--mu-maroon);
+    font-family: "Montserrat", sans-serif;
+    color: white;
 }
 
 #headerImg
 {
-    /* max-width: 100%; */
     width: 100%;
-    box-shadow: 0 5px 10px rgba(1, 1, 1, .25);
+    box-shadow: 0 5px 10px rgba(1, 1, 1, 0.25);
 }
 
 .cardContainer
@@ -19,23 +28,19 @@ body
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
-
     background-color: white;
-    /* border: 2px solid purple; */
 }
 
 .outerCard
 {
-    border: black 2px solid;
+    border: 2px solid var(--mu-yellow);
     width: 300px;
     height: 475px;
     margin: 15px;
-    background-color: rgb(93, 39, 124);
+    background-color: var(--mu-red);
     border-radius: 10px;
     padding: 5px;
-
     box-shadow: 4px 4px 15px rgba(0,0,0,0.2);
-
     transition: background-color .5s ease;
 }
 
@@ -44,16 +49,15 @@ body
     width: 100%;
     height: 100%;
     padding: 5px;
-    border: black solid 1px;
+    border: 2px solid var(--mu-yellow);
     background-color: rgb(255, 255, 255);
-
     display: flex;
     flex-direction: column;
 }
 
 .outerCard:hover
 {
-    background-color: #cdc1a7;
+    background-color: var(--mu-tangerine);
 }
 
 .card p
@@ -71,7 +75,7 @@ body
 
 .position h2
 {
-    color: black;
+    color: var(--mu-maroon);
     font-size: 1.25em;
     font-weight: bold;
 }
@@ -88,20 +92,16 @@ body
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    
-
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid var(--mu-yellow);
 }
 
 .playerName h3
 {
-    color: black;
+    color: var(--mu-rosso);
     text-align: center;
     font-size: 2em;
     font-weight: bold;
 }
-
-
 
 .pointContainer
 {
@@ -109,9 +109,7 @@ body
     justify-content: space-evenly;
     flex-direction: column;
     height: 100%;
-
-    width: 100%;
-
+    width: 100%;    
 }
 
 .statPrice h3
@@ -126,11 +124,10 @@ body
     align-items: center;
     justify-content: center;
     height: 100%;
-
-    border-top: 2px black solid;
+    border-top: 2px solid var(--mu-yellow);
 }
 
-.infoCol p,h3
+.infoCol p, .infoCol h3
 {
     margin: 0;
 }
@@ -138,19 +135,17 @@ body
 .infoCol h3
 {
     font-size: 3em;
+    color: var(--mu-tangerine);
 }
 
 .teamInfo
 {
-    /* height: 100%; */
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-
-    border-top: 1px black solid;
-    border-bottom: 1px black solid;
-
+    border-top: 1px solid var(--mu-yellow);
+    border-bottom: 1px solid var(--mu-yellow);
 }
 
 .teamName p
@@ -183,13 +178,10 @@ body
     max-height: 0;
     opacity: 0;
     overflow: hidden;
-
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-
     gap: 10px;
-
     transition: max-height 0.6s ease, opacity 0.4s ease
 }
 
@@ -198,7 +190,6 @@ body
     display: flex;
     flex-direction: column;
     align-items: center;  
-
     text-align: center;
 }
 
@@ -209,9 +200,9 @@ body
 
 .footerBtnCont
 {
-    background-color: rgb(20, 2, 20);
-    border-top: rgb(255, 255, 255) 2px solid;
-    border-bottom: rgb(255, 255, 255) 2px solid;
+    background-color: var(--mu-red);
+    border-top: 2px solid var(--mu-yellow);
+    border-bottom: 2px solid var(--mu-yellow);
 
     max-height: 200px;
     padding-left: 80px;
@@ -221,7 +212,6 @@ body
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-
 }
 
 .footerButtons
@@ -231,8 +221,6 @@ body
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
-
-
 }
 
 .footerButtons li, a
@@ -248,21 +236,18 @@ body
 
 .footerBtnCont a:hover
 {
-    color: #cdc1a7;
+    color: var(--mu-tangerine);
 }
 
 
 #imgBg
 {
     background-color: white;
-
     display: flex;
     justify-content: center;
     align-items: center;
     padding-left: 20px;
-
     width: 400px;
-
 }
 
 #premierLogo
@@ -273,11 +258,9 @@ body
 footer
 {
     margin-top: 10px;
-    background-color: black;
-    /* border-top: white 2px solid; */
-    border-bottom: white 2px solid;
+    background-color: var(--mu-maroon);
+    border-bottom: 2px solid var(--mu-yellow);
     color: white;
-
     display: flex;
     justify-content: center;
 }
