@@ -13,12 +13,8 @@
             <a href="index.php" class="btn btn-primary btn-sm">Home</a>
             <?php if (isset($_SESSION['user_id'])): ?>
                 <a href="addplayer.php" class="btn btn-primary btn-sm">Add Player</a>
-                <!-- <a href="users.php" class="btn btn-secondary btn-sm">Users</a> -->
-                <!-- Li,pengcheng: Logout button: Allows the user to end the session and return to the login screen -->
             <?php else: ?>
                 <a href="login.php" class="btn btn-success btn-sm">Login</a>
-                <!-- <a href="register.php" class="btn btn-secondary btn-sm">Register</a> -->
-
             <?php endif; ?>
         </div>
 

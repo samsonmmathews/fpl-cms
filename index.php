@@ -1,11 +1,13 @@
 <!-- Li,pengcheng: Login -->
 <?php
-session_start();
-// Redirect to login if not authenticated
-if (!isset($_SESSION['user_id'])) {
-    header('Location: login.php');
-    exit;
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
 }
+// // Redirect to login if not authenticated
+// if (!isset($_SESSION['user_id'])) {
+//     header('Location: login.php');
+//     exit;
+// }
 ?>
 
 <!DOCTYPE html>
@@ -55,7 +57,7 @@ if (!isset($_SESSION['user_id'])) {
     <?php
     include 'connect.php';
 
-    $query = "SELECT p.full_name, p.position, p.price, p.points, p.total_points, t.team_name, t.manager_name, t.stadium 
+    $query = "SELECT  p.player_id, p.full_name, p.position, p.price, p.points, p.total_points, t.team_name, t.manager_name, t.stadium 
             FROM players p 
             INNER JOIN teams t ON p.fk_team = t.team_id
             ORDER BY p.total_points DESC";
@@ -154,6 +156,27 @@ if (mysqli_num_rows($result) > 0)
                         </div>
                     </div>
                 </div>
+            ';
+            if (isset($_SESSION['user_id'])) {
+                echo '
+                    <div class="card-footer">
+                        <div class="row">
+                            <div class="col">
+                                <a href="editplayer.php?id=' . $row['player_id'] . '" class="btn btn-warning btn-sm">Edit</a>
+                            </div>
+
+                            <div class="col text-end">
+                                <form action="deleteplayer.php" method="POST">
+                                    <input type="hidden" name="id" value="' . $row['player_id'] . '">
+                                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                ';
+            }
+
+            echo '  
             </div>
         </div>';
     }
