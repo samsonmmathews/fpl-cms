@@ -117,27 +117,25 @@ if (mysqli_num_rows($result) > 0)
         echo '
         <div class="outerCard">
             <div class="card">
-                <div class=position>
-                <h2><u>' . $row['position'] . '</u></h2>
-
+                <div class="position">
+                    <div>
+                        <h3>£' . number_format($row['price'], 1) . 'm</h3>
+                    </div>
+                    <div>
+                        <h2><u>' . $row['position'] . '</u></h2>      
+                    </div>
                 </div>
                 <div class=playerName>
                     <h3>' . $row['full_name'] . '</h3>
                 </div>
-                <div class="pricePointCont">
-                    <div class=infoCol>
-                        <p><u><b> Price </b></u></p>
-                        <h3>£' . number_format($row['price'], 1) . 'm</h3>
+                <div class=pointContainer>
+                    <div class="infoCol">
+                        <p><u> Total Points </u></p>
+                        <h3>' . $row['total_points'] . '</h3>
                     </div>
-                    <div class=pointContainer>
-                        <div class="infoCol">
-                            <p><u> Total Points </u></p>
-                            <h3>' . $row['total_points'] . '</h3>
-                        </div>
-                        <div class="infoCol">
-                            <p><u> Points </u></p>
-                            <h3>' . $row['points'] . '</h3>
-                        </div>
+                    <div class="infoCol">
+                        <p><u> Points </u></p>
+                        <h3>' . $row['points'] . '</h3>
                     </div>
                 </div>
                 <div class="teamInfo">
