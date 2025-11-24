@@ -7,23 +7,23 @@
 
 
 
-<nav class="mb-3 bg-transparent border-bottom border-light p-2">
-    <div class="d-flex justify-content-between align-items-center">
-        <div>
-            <a href="index.php" class="btn btn-primary btn-sm">Home</a>
-            <?php if (isset($_SESSION['user_id'])): ?>
-                <a href="addplayer.php" class="btn btn-primary btn-sm">Add Player</a>
-            <?php else: ?>
-                <a href="login.php" class="btn btn-success btn-sm">Login</a>
-            <?php endif; ?>
-        </div>
-
-         <div class="text-center flex-grow-1">
-            <span class="medium text-white mb-0">Fantasy Premier League</span>
-        </div>
-
+<nav class="navbar">
+    <div class="nav-left">
+        <a href="index.php" class="nav-btn">Home</a>
         <?php if (isset($_SESSION['user_id'])): ?>
-            <a class="btn btn-outline-danger btn-sm" href="logout.php">Logout</a>
+            <a href="addplayer.php" class="nav-btn">Add Player</a>
+        <?php else: ?>
+            <a href="login.php" class="nav-btn">Login</a>
+        <?php endif; ?>
+    </div>
+
+    <div class="nav-center">
+        <span class="nav-title">Fantasy Premier League</span>
+    </div>
+
+    <div class="nav-right">
+        <?php if (isset($_SESSION['user_id'])): ?>
+            <a class="nav-btn logout-btn" href="logout.php">Logout</a>
         <?php endif; ?>
     </div>
 </nav>
