@@ -287,6 +287,8 @@ body
 .nav-left, .nav-center, .nav-right {
     display: flex;
     align-items: center;
+    margin: 5px;
+    padding-left: 10px;
 }
 
 .nav-title {
@@ -328,4 +330,64 @@ body
 .container {
     max-width: 1200px;
     margin-top: 30px;
+}
+
+/* Add player styling */
+
+.addplayer-wrapper {
+    border-radius: 16px;
+    max-width: 650px;
+    margin: 40px auto;
+
+    background: rgba(255,255,255,0.1);
+    border: 2px solid var(--mu-yellow);
+    padding: 35px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+}
+
+.addplayer-wrapper h2 {
+    color: var(--mu-maroon);
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+.addplayer-wrapper label {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--mu-maroon);
+    margin-top: 14px;
+    display: block;
+}
+
+.addplayer-wrapper input,
+.addplayer-wrapper select {
+    width: 100%;
+    padding: 14px;
+    margin-top: 6px;
+    border-radius: 10px;
+    border: 2px solid var(--mu-tangerine);
+    font-size: 16px;
+    color: black;
+    transition: 0.25s;
+}
+
+.addplayer-wrapper button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 25px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 12px;
+    background-color: var(--mu-tangerine);
+    border: 2px solid var(--mu-yellow);
+    color: black;
+    transition: 0.3s;
+}
+
+.addplayer-wrapper button:hover {
+    background-color: var(--mu-yellow);
+    border-color: white;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+    cursor: pointer;
 }
